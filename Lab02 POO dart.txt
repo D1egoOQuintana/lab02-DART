@@ -56,4 +56,28 @@ void main() {
 }
 
 
+abstract class Empleado {
+  String nombre;
+  double salario;
+
+  Empleado(this.nombre, this.salario);
+
+  double calcularBonificacion();
+}
+
+class Gerente extends Empleado {
+  Gerente(String nombre, double salario) : super(nombre, salario);
+
+  @override
+  double calcularBonificacion() {
+    return salario * 0.2;
+  }
+}
+
+void main() {
+  var gerente1 = Gerente('Ana', 5000);
+  print('Bonificación: ${gerente1.calcularBonificacion()}');
+}
+
+
 
