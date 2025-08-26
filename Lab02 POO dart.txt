@@ -1,0 +1,59 @@
+class Vehiculo {
+  String marca;
+  String modelo;
+  int anio;
+
+  Vehiculo(this.marca, this.modelo, this.anio);
+
+  void mostrarInfo() {
+    print('Vehículo: $marca $modelo $anio');
+  }
+}
+
+class Auto extends Vehiculo {
+  String combustible;
+
+  Auto(String marca, String modelo, int anio, this.combustible)
+      : super(marca, modelo, anio);
+
+  @override
+  void mostrarInfo() {
+    print('Auto: $marca $modelo $anio Combustible: $combustible');
+  }
+}
+
+void main() {
+  var auto1 = Auto('Toyota', 'Corolla', 2021, 'Gasolina');
+  auto1.mostrarInfo();
+}
+
+
+class Vehiculo {
+  String marca;
+  String modelo;
+  int anio;
+
+  Vehiculo(this.marca, this.modelo, this.anio);
+}
+
+class Auto extends Vehiculo {
+  String combustible;
+
+  Auto(String marca, String modelo, int anio, this.combustible)
+      : super(marca, modelo, anio);
+
+  Auto.electrico(String marca, String modelo, int anio)
+      : this(marca, modelo, anio, 'Eléctrico');
+
+  void mostrarInfo() {
+    print('Auto: $marca $modelo $anio Combustible: $combustible');
+  }
+}
+
+void main() {
+  var auto2 = Auto.electrico('Tesla', 'Model 3', 2023);
+  auto2.mostrarInfo();
+}
+
+
+
